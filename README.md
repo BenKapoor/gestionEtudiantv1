@@ -1,4 +1,4 @@
-# gestionetudiant
+# gestionetudiantV1
 
 <b>0- Installation</b>
 
@@ -20,6 +20,8 @@ Aller dans `target\checkout\GestionEtudiant`
 
 Exécuter la commande :
 `mvn install`
+
+Au niveau du pom.xml exécuter sur la console (à la racine) : `mvn exec:java` ce qui lance le provider
 
 Aller dans le dossier `target` et récupérer le war génréré.
 
