@@ -38,10 +38,10 @@ Mot de passe : password</i>
 <b>Fonctionnalités présentes : </b>
 - Identification de la direction
 - Ajouter un étudiant
-- Modifier un étudiant (Utilisation du web service)
+- Modifier un étudiant 
 - Supprimer un étudiant
 - Lister tous les étudiants
-- Récupérer le détail d'un étudiant
+- Récupérer le détail d'un étudiant (Utilisation du web service)
 - Lier un étudiant à un cours
 
 
