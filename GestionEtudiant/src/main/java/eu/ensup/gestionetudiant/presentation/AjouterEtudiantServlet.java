@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import directionClient.DirectionServiceService;
+import directionClient.Etudiant;
+import directionClient.IDirectionService;
 import eu.ensup.gestionetudiant.domaine.Direction;
-import eu.ensup.gestionetudiant.domaine.Etudiant;
 import eu.ensup.gestionetudiant.service.DirectionService;
 import eu.ensup.gestionetudiant.service.LoginService;
 
@@ -53,19 +55,20 @@ public class AjouterEtudiantServlet extends HttpServlet {
 				int telephone = Integer.parseInt(request.getParameter("telephone")); 
 				String dateNaissance = request.getParameter("dateNaissance");
 
-				Etudiant etu = new Etudiant(nom, prenom, mail, adresse, telephone, dateNaissance);
-				DirectionService service = new DirectionService();
-				service.creerEtudiant(etu);				
+				DirectionServiceService impl = new DirectionServiceService();
 				
-//				if (!(directionListe.isEmpty())) {
-//					RequestDispatcher rs = request.getRequestDispatcher("accueil.jsp");
-//					rs.forward(request, response);
-//					
-//				} else {
-//					
-//					RequestDispatcher rs = request.getRequestDispatcher("error.jsp");
-//					rs.include(request, response);
-//				}
+				IDirectionService port = impl.getDirectionServicePort();
+				
+				Etudiant etu = new Etudiant();
+				
+				int a = port.creerEtudiant(etu);
+				
+				System.out.println("a: "+ a);
+				
+//				Etudiant etu = new Etudiant(nom, prenom, mail, adresse, telephone, dateNaissance);
+//				DirectionService service = new DirectionService();
+//				service.creerEtudiant(etu);				
+				
 				doGet(request, response);
 	}
 

@@ -1,6 +1,8 @@
 package eu.ensup.gestionetudiant.webservice;
 import java.util.List;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+
 import eu.ensup.gestionetudiant.domaine.Cours;
 import eu.ensup.gestionetudiant.domaine.Etudiant;
 /**
@@ -8,6 +10,7 @@ import eu.ensup.gestionetudiant.domaine.Etudiant;
  *         toutes les méthodes obligatoire du service
  */
 @WebService
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
 public interface IDirectionService {
 	/**
 	 * Ajoute un étudiaant à un cours

@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import eu.ensup.gestionetudiant.domaine.Etudiant;
+import directionClient.DirectionServiceService;
+import directionClient.Etudiant;
+import directionClient.IDirectionService;
 import eu.ensup.gestionetudiant.service.DirectionService;
 
 /**
@@ -43,9 +45,17 @@ public class RechercheDetailEtudiantServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int idEtudiant = Integer.parseInt(request.getParameter("idEtudiant")); 
-		DirectionService service = new DirectionService();
+//		DirectionService service = new DirectionService();
+//		Etudiant etudiant = new Etudiant();
+//		etudiant = service.lireInfoEtudiant(idEtudiant);
+		
+		DirectionServiceService impl = new DirectionServiceService();
+		
+		IDirectionService port = impl.getDirectionServicePort();
+		
 		Etudiant etudiant = new Etudiant();
-		etudiant = service.lireInfoEtudiant(idEtudiant);
+		
+		etudiant = port.lireInfoEtudiant(idEtudiant);
 		
 		if (etudiant != null) {
 			System.out.println(etudiant);
