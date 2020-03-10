@@ -6,6 +6,7 @@ import eu.ensup.gestionetudiant.dao.IDirectionDao;
 import eu.ensup.gestionetudiant.domaine.Cours;
 import eu.ensup.gestionetudiant.domaine.Etudiant;
 @WebService(endpointInterface = "eu.ensup.gestionetudiant.webservice.IDirectionService")
+
 public class DirectionService implements IDirectionService {
 	IDirectionDao dao = new DirectionDao();
 	public int ajouterEtudiantCours(Etudiant etu, Cours c) {

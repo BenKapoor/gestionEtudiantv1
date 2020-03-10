@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import eu.ensup.gestionetudiant.domaine.Etudiant;
-import eu.ensup.gestionetudiant.service.DirectionService;
+import directionClient.DirectionServiceService;
+import directionClient.Etudiant;
+import directionClient.IDirectionService;
 
 /**
  * Servlet implementation class ListeEtudiants
@@ -36,10 +37,20 @@ public class ListeEtudiantsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		DirectionServiceService impl = new DirectionServiceService();
 		
-		DirectionService service = new DirectionService();
-		List<Etudiant> listeEtudiants = service.listerEtudiants();
+		IDirectionService port = impl.getDirectionServicePort();
+		System.out.println("ici");
+		List<Etudiant> listeEtudiants = port.listerEtudiants();
+		System.out.println("Hello "+listeEtudiants.size());
 		
+//		for(int i = 0; i < listeEtudiants.size(); i++) {
+//			System.out.println("\t \n Nombre de joueurs : " + listeEtudiants.get(i).getNom());
+//			
+//		
+//		}
+		
+		System.out.println(listeEtudiants);
 		if (!(listeEtudiants.isEmpty())) {
 			System.out.println(listeEtudiants);
 			RequestDispatcher rs = request.getRequestDispatcher("listeEtudiants.jsp");
