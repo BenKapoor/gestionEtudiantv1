@@ -1,4 +1,4 @@
-# gestionetudiant
+# gestionetudiantV1
 
 <b>0- Installation</b>
 
@@ -14,12 +14,14 @@ Au niveau de votre disque C, ouvirir une console cmd et ecrire:
 
 `cd c:\GTMGestionEtudiant`
 
-`mvn scm:checkout  -DconnectionUrl=scm:git:https://github.com/BenKapoor/GestionEtudiant`
+`mvn scm:checkout  -DconnectionUrl=scm:git:https://github.com/BenKapoor/gestionEtudiantv1`
 
 Aller dans `target\checkout\GestionEtudiant`
 
 Exécuter la commande :
 `mvn install`
+
+Au niveau du pom.xml exécuter sur la console (à la racine) : `mvn exec:java` ce qui lance le provider
 
 Aller dans le dossier `target` et récupérer le war génréré.
 
@@ -38,11 +40,12 @@ Mot de passe : password</i>
 <b>Fonctionnalités présentes : </b>
 - Identification de la direction
 - Ajouter un étudiant
-- Modifier un étudiant
+- Modifier un étudiant 
 - Supprimer un étudiant
 - Lister tous les étudiants
-- Récupérer le détail d'un étudiant
+- Récupérer le détail d'un étudiant (Utilisation du web service)
 - Lier un étudiant à un cours
+
 
 <b>Technologies : </b>
 - Servlet
@@ -50,3 +53,4 @@ Mot de passe : password</i>
 - JSP
 - Bootstrap
 - JPA
+- Web service
