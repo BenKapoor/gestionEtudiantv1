@@ -6,7 +6,6 @@ import javax.jws.soap.SOAPBinding;
 import eu.ensup.gestionetudiant.domaine.Cours;
 
 @WebService
-@SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
 public interface ICoursService {
 
 	/**
