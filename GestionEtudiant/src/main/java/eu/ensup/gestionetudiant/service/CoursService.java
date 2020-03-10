@@ -7,8 +7,8 @@ import eu.ensup.gestionetudiant.dao.ICoursDao;
 import eu.ensup.gestionetudiant.domaine.Cours;
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "eu.ensup.gestionetudiant.ICoursService")
-public class CoursService implements ICoursService {
+@WebService( endpointInterface = "eu.ensup.gestionetudiant.service.ICoursService")
+public class CoursService implements ICoursService{
 	ICoursDao dao = new CoursDao();
 	
 	public List<Cours> listerCours() {
